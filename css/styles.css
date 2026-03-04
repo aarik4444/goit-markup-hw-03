@@ -1,24 +1,41 @@
+/* ======================
+   BASE
+====================== */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   color: #434455;
   background-color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6,p,ul { margin: 0; }
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+}
 
-ul { padding: 0; list-style: none; }
-img { display: block; }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ======================
+   CONTAINER
+====================== */
 .container {
   max-width: 1158px;
-  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-.section { padding: 120px 0; }
-
-/* HEADER */
+/* ======================
+   HEADER
+====================== */
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
@@ -26,10 +43,25 @@ img { display: block; }
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding: 24px 0;
 }
 
-.nav { display: flex; align-items: center; }
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #434455;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #4d5ae5;
+}
+
+.nav {
+  display: flex;
+  margin-left: 48px; /* відступ між логотипом і навігацією */
+}
 
 .nav-list {
   display: flex;
@@ -37,8 +69,11 @@ img { display: block; }
 }
 
 .nav-link {
-  display: inline-block;
-  padding: 28px 0; /* вертикальний відступ для висоти хедера */
+  text-decoration: none;
+  color: #434455;
+  padding: 16px 0; /* точний вертикальний padding для висоти header */
+  font-weight: 500;
+  display: block;
 }
 
 .address {
@@ -47,127 +82,190 @@ img { display: block; }
 
 .address-list {
   display: flex;
-  gap: 40px;
+  gap: 32px;
 }
 
-/* HERO */
+.address-link {
+  text-decoration: none;
+  color: #434455;
+  font-size: 14px;
+}
+
+/* ======================
+   HERO
+====================== */
 .hero {
-  background: #2e2f42;
-  padding: 188px 0;
+  background-color: #2e2f42;
   text-align: center;
+  padding: 188px 0;
 }
 
 .hero-title {
   color: white;
   font-size: 56px;
-  margin: 0 auto 48px auto;
+  font-weight: 700;
   max-width: 650px; /* обмеження ширини */
+  margin: 0 auto 48px auto;
 }
 
 .hero-btn {
-  background: #4d5ae5;
-  color: white;
+  background-color: #4d5ae5;
+  color: #fff;
   border: none;
-  padding: 16px 32px;
   border-radius: 4px;
+  padding: 16px 32px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-/* FEATURES */
+/* ======================
+   FEATURES
+====================== */
 .features-list {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .features-item {
-  width: calc((100% - 72px)/4);
+  width: calc((100% - 72px) / 4);
+  text-align: center;
 }
 
 .features-title {
-  margin-bottom: 16px; /* відступ між h3 і p */
+  font-weight: 700;
+  margin-bottom: 8px; /* правильний відступ */
 }
 
-/* TEAM */
-.team { background: #f4f4fd; }
+.features-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ======================
+   TEAM
+====================== */
+.team {
+  background-color: #f4f4fd;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 72px; /* відступ від заголовка до списку карток */
+}
 
 .team-list {
   display: flex;
   gap: 24px;
-  margin-top: 72px; /* відступ від заголовка секції */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .team-card {
-  background: white;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px; /* заокруглення нижніх кутів */
   text-align: center;
-  border-radius: 0 0 4px 4px;
+  overflow: hidden;
 }
 
-.card-text {
+.team-img {
+  width: 100%;
+  height: auto;
+}
+
+.team-info {
   padding: 32px 16px;
 }
 
-.card-text h3 {
-  margin-bottom: 8px; /* відступ між ім'ям і роллю */
+.team-name {
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-/* PORTFOLIO */
+.team-role {
+  font-size: 14px;
+  color: #434455;
+}
+
+/* ======================
+   PORTFOLIO
+====================== */
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 24px;
-  margin-top: 72px; /* відступ від заголовка секції */
+  gap: 24px;
+  justify-content: center;
 }
 
 .portfolio-card {
-  width: calc((100% - 48px)/3);
+  width: calc((100% - 48px) / 3);
+  background-color: #fff;
+  overflow: hidden;
 }
 
-.portfolio-card img { 
-  display: block; 
+.portfolio-img {
   width: 100%;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  display: block;
 }
 
-.portfolio-card .card-text {
+.portfolio-info {
+  padding: 24px 16px;
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
   border-bottom: 1px solid #e7e9fc;
-  border-radius: 0 0 4px 4px;
-  padding: 32px 16px;
 }
 
-.portfolio-card .card-text h3 {
-  margin-bottom: 8px; /* відступ між заголовком і категорією */
+.portfolio-title {
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-/* FOOTER */
+.portfolio-category {
+  font-size: 14px;
+  color: #434455;
+}
+
+/* ======================
+   FOOTER
+====================== */
 .footer {
-  background: #2e2f42;
+  background-color: #2e2f42;
+  color: #fff;
   padding: 100px 0;
-  color: white;
-  text-align: center;
+}
+
+.footer-container {
+  max-width: 480px; /* вузьке обмеження тексту */
 }
 
 .footer-logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
   display: block;
-  margin: 0 auto 24px auto;
+  margin-bottom: 16px; /* відступ між логотипом і текстом */
 }
 
 .footer-text {
-  margin: 0 auto;
-  max-width: 600px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-/* visually hidden */
+/* ======================
+   VISUALLY HIDDEN
+====================== */
 .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  white-space: nowrap;
   border: 0;
+  padding: 0;
+  white-space: nowrap;
 }
